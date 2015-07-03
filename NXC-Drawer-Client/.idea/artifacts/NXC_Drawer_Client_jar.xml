@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NXC-Drawer-Client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NXC_Drawer_Client_jar</output-path>
+    <root id="archive" name="NXC-Drawer-Client.jar">
+      <element id="module-output" name="NXC-Drawer-Client" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/leJOS_NXJ_0.9.1beta-3/lib/nxt/classes.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

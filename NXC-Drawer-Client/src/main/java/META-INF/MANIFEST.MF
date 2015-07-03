@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: /home/maximaximal/Dokumente/Programmieren/NXC-Drawer/NXC-D
+ rawer-Client/src/main/resources/classes.jar
+Main-Class: Main
+
