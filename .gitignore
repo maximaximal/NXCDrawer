@@ -6,3 +6,6 @@ build/
 
 # Ignore the java target
 NXC-Drawer-Client/target
+
+# Ignore the java .idea files.
+NXC-Drawer-Client/.idea/
