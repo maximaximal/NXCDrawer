@@ -1,5 +1,7 @@
 #include "MainWindow.hpp"
 #include "ui_MainWindow.h"
+#include "ConnectNXT.h"
+#include "NXTCommunicator.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,6 +25,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_nxcDrawingScreen->setDrawingMode(NXCDrawingScreen::ContinousLine);
     m_nxcDrawingScreen->setSceneRect(QRectF(0, 0, 210, 297));
+
+    m_connectNXT = nullptr;
+    m_nxtCommunicator = new NXTCommunicator();
+    m_nxtCommunicator->connect();
 }
 
 MainWindow::~MainWindow()
@@ -58,4 +64,12 @@ void MainWindow::on_height_valueChanged(int arg1)
     sceneRect.setHeight(arg1);
 
     m_nxcDrawingScreen->setSceneRect(sceneRect);
+}
+
+void MainWindow::on_actionVerbindung_herstellen_triggered()
+{
+    if(m_connectNXT == nullptr)
+        m_connectNXT = new ConnectNXT(this);
+
+    m_connectNXT->show();
 }

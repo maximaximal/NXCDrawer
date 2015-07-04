@@ -1,0 +1,29 @@
+import lejos.geom.Point;
+
+public class MovingPlatform {
+	private double x, y;
+	private double movingSpeed = 5;
+	
+	/**
+	 * Creates the platform class.
+	 */
+	public MovingPlatform() {
+		
+	}
+	
+	public double getPosX() {
+		return x;
+	}
+	public double getPosY() {
+		return y;
+	}
+	
+	public void moveToPos(double x2, double y2) {
+		//Calculate the distance between the 2 points. 
+		double distance = Point.distance(x, y, x2, y2);
+		
+		//Calculate the duration it takes to move to the new position. 
+		double moveDuration = distance / movingSpeed;
+		
+	}
+}

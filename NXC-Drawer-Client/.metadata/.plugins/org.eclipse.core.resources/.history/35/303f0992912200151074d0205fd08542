@@ -1,0 +1,17 @@
+import lejos.nxt.comm.BTConnection;
+import lejos.nxt.comm.Bluetooth;
+
+public class PCCommunicator {
+	private BTConnection usbConn;
+	
+	public PCCommunicator() {
+		
+	}
+	
+	public void startConnector() {
+		System.out.println("Connecting using Bluetooth");
+		
+		System.out.println("Waiting for Bluetooth connections...");
+		usbConn = Bluetooth.waitForConnection();
+	}
+}

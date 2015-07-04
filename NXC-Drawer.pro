@@ -11,14 +11,24 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = NXC-Drawer
 TEMPLATE = app
 
+QT += bluetooth
+QT += serialport
+
 
 SOURCES += main.cpp\
         MainWindow.cpp \
     NXCDrawingScreen.cpp \
-    AddLineStrip.cpp
+    AddLineStrip.cpp \
+    NXTCommunicator.cpp \
+    ConnectNXT.cpp
 
 HEADERS  += MainWindow.hpp \
     NXCDrawingScreen.hpp \
-    AddLineStrip.hpp
+    AddLineStrip.hpp \
+    NXTCommunicator.h \
+    ConnectNXT.h
 
-FORMS    += MainWindow.ui
+FORMS    += MainWindow.ui \
+            ConnectNXT.ui
+
+CONFIG += c++11

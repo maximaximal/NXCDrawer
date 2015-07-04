@@ -1,0 +1,10 @@
+
+public class PCCommunicator {
+	public PCCommunicator() {
+		
+	}
+	
+	public void startConnector() {
+		System.out.println("Connecting using USB");
+	}
+}

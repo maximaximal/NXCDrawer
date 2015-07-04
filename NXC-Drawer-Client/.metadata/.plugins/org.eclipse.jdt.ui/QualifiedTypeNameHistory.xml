@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lejos.nxt.LCD"/>
+<fullyQualifiedTypeName name="lejos.nxt.Button"/>
+<fullyQualifiedTypeName name="MovingPlatform"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="lejos.geom.Point"/>
+<fullyQualifiedTypeName name="PCCommunicator"/>
+<fullyQualifiedTypeName name="lejos.nxt.comm.USBConnection"/>
+<fullyQualifiedTypeName name="lejos.nxt.comm.Bluetooth"/>
+<fullyQualifiedTypeName name="lejos.nxt.comm.USB"/>
+</qualifiedTypeNameHistroy>

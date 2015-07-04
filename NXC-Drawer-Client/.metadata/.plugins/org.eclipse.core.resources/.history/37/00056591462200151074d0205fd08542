@@ -1,0 +1,16 @@
+import lejos.geom.Point;
+
+public class MovingPlatform {
+	private Point pos;
+	
+	/**
+	 * Creates the platform class.
+	 */
+	public MovingPlatform() {
+		
+	}
+	
+	public Point getPos() {
+		return pos;
+	}
+}

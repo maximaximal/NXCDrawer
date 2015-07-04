@@ -1,0 +1,17 @@
+import lejos.nxt.comm.USB;
+import lejos.nxt.comm.USBConnection;
+
+public class PCCommunicator {
+	private USBConnection usbConn;
+	
+	public PCCommunicator() {
+		
+	}
+	
+	public void startConnector() {
+		System.out.println("Connecting using USB");
+		
+		System.out.println("Waiting for USB connections...");
+		usbConn = USB.waitForConnection();
+	}
+}

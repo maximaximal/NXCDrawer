@@ -5,6 +5,9 @@
 #include <QUndoStack>
 #include <NXCDrawingScreen.hpp>
 
+class ConnectNXT;
+class NXTCommunicator;
+
 namespace Ui {
 class MainWindow;
 }
@@ -26,11 +29,15 @@ class MainWindow : public QMainWindow
 
         void on_height_valueChanged(int arg1);
 
-    private:
+        void on_actionVerbindung_herstellen_triggered();
+
+private:
         Ui::MainWindow *ui;
         QUndoStack *m_undoStack;
 
         NXCDrawingScreen *m_nxcDrawingScreen;
+        ConnectNXT *m_connectNXT;
+        NXTCommunicator *m_nxtCommunicator;
 };
 
 #endif // MAINWINDOW_HPP
