@@ -9,3 +9,11 @@ NXC-Drawer-Client/target
 
 # Ignore the java .idea files.
 NXC-Drawer-Client/.idea/
+
+# Ignore vim files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
