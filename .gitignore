@@ -1,0 +1,8 @@
+# Ignore the user files of qt
+NXC-Drawer.pro.user*
+
+# Ignore the build files
+build/
+
+# Ignore the java target
+NXC-Drawer-Client/target
