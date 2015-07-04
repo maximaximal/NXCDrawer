@@ -1,0 +1,10 @@
+import lejos.nxt.Button;
+import lejos.nxt.LCD;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
