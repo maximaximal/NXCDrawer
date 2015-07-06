@@ -1,0 +1,15 @@
+
+public class Greifarm {
+	private boolean greiftGerade;
+	
+	public Greifarm() {
+		
+	}
+	
+	public void zugreifen() {
+		
+	}
+	public void loslassen() {
+		
+	}
+}

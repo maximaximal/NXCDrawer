@@ -1,0 +1,81 @@
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+import lejos.nxt.Motor;
+import lejos.nxt.SensorPort;
+import lejos.nxt.SensorPortListener;
+import lejos.nxt.TouchSensor;
+
+public class Greifarm {
+	private boolean greiftGerade;
+	private int greifenRotation;
+	
+	private TouchSensor upSensor;
+	private TouchSensor downSensor;
+	
+	public Greifarm() {
+		greiftGerade = false;
+		greifenRotation = 100;
+		
+		//Greifarm Steuerung
+		upSensor = new TouchSensor(SensorPort.S2);
+		downSensor = new TouchSensor(SensorPort.S1);
+		
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort aSource, int aOldValue, int aNewValue) {
+				if(upSensor.isPressed()) {
+					Motor.B.forward();
+				} else {
+					Motor.B.stop();
+				}
+			}
+		});
+		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort aSource, int aOldValue, int aNewValue) {
+				if(downSensor.isPressed()) {
+					Motor.B.backward();
+				} else {
+					Motor.B.stop();
+				}
+			}
+		});
+		
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			@Override
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+			
+			@Override
+			public void buttonPressed(Button b) {
+				Motor.A.forward();
+			}
+		});
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			@Override
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+			
+			@Override
+			public void buttonPressed(Button b) {
+				Motor.A.forward();
+			}
+		});
+	}
+	public void close() {
+		loslassen();
+	}
+	
+	public void zugreifen() {
+		if(!greiftGerade) {
+			Motor.C.rotate(-greifenRotation);
+			greiftGerade = true;
+		}
+	}
+	public void loslassen() {
+		if(greiftGerade) {
+			Motor.C.rotate(greifenRotation);
+			greiftGerade = false;
+		}
+	}
+}

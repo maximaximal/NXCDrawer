@@ -1,0 +1,23 @@
+import lejos.nxt.Motor;
+
+public class Greifarm {
+	private boolean greiftGerade;
+	
+	public Greifarm() {
+		greiftGerade = false;
+	}
+	public void close() {
+		loslassen();
+	}
+	
+	public void zugreifen() {
+		if(!greiftGerade) {
+			Motor.C.rotate(90);
+		}
+	}
+	public void loslassen() {
+		if(greiftGerade) {
+			Motor.C.rotate(-90);
+		}
+	}
+}

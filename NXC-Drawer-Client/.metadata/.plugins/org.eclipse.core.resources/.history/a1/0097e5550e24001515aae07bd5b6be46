@@ -1,0 +1,26 @@
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+
+public class Main {
+	public static Greifarm greifarm;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		greifarm = new Greifarm();
+		
+		Button.ENTER.addButtonListener(new ButtonListener() {
+			@Override
+			public void buttonReleased(Button b) {
+				// TODO Auto-generated method stub
+				greifarm.loslassen();
+			}
+			
+			@Override
+			public void buttonPressed(Button b) {
+				// TODO Auto-generated method stub
+				greifarm.zugreifen();
+			}
+		});
+	}
+
+}

@@ -1,0 +1,26 @@
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+import lejos.nxt.SensorPort;
+
+public class Main {
+	public static Greifarm greifarm;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		greifarm = new Greifarm();
+	
+		//Ausgabe anzeigen, was das Teil hier eigentlich tut. 
+		
+		System.out.println("Stapeli");
+		System.out.println("=======");
+		
+		System.out.println("Built by:");
+		System.out.println("    Simone");
+		System.out.println("Programmed by:");
+		System.out.println("  - Max")
+		
+		//Wait for escape
+		Button.ESCAPE.waitForPressAndRelease();
+	}
+
+}

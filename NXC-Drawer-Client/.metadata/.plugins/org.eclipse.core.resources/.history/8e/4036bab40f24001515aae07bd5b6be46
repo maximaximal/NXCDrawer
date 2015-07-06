@@ -1,0 +1,42 @@
+import lejos.nxt.Motor;
+import lejos.nxt.SensorPort;
+import lejos.nxt.TouchSensor;
+
+public class Greifarm {
+	private boolean greiftGerade;
+	private int greifenRotation;
+	
+	private TouchSensor upSensor;
+	private TouchSensor downSensor;
+	
+	public Greifarm() {
+		greiftGerade = false;
+		greifenRotation = 100;
+		
+		//Greifarm Steuerung
+		upSensor = new TouchSensor(SensorPort.S2);
+		downSensor = new TouchSensor(SensorPort.S1);
+		
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort aSource, int aOldValue, int aNewValue) {
+				
+			}
+		});
+	}
+	public void close() {
+		loslassen();
+	}
+	
+	public void zugreifen() {
+		if(!greiftGerade) {
+			Motor.C.rotate(-greifenRotation);
+			greiftGerade = true;
+		}
+	}
+	public void loslassen() {
+		if(greiftGerade) {
+			Motor.C.rotate(greifenRotation);
+			greiftGerade = false;
+		}
+	}
+}
